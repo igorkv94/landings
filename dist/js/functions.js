@@ -1,0 +1,1 @@
+$(window).scroll(function(){var s=$(this).scrollTop();$(".logo").css({transform:"translate(0px, "+s/2+"%)"}),$(".eagle").css({transform:"translate("+s/6+"%, "+1.8*s+"%)"}),$(".tiger").css({transform:"translate(0px, "+s/3+"%)"}),$(".deer").css({transform:"translate(0px, "+s/1.2+"%)"})});
