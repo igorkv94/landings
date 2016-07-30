@@ -12,4 +12,15 @@ $(window).scroll(function () {
   $('.deer').css({
     'transform': 'translate(0px, ' + wScroll / 1.2 + '%)'
   });
+  // Landing Elements
+  if(wScroll > $('.tiger-pics').offset().top - ($(window).height() / 1.2)) {
+
+    $('.tiger-pics figure').each(function(i){
+
+      setTimeout(function(){
+        $('.tiger-pics figure').eq(i).addClass('is-showing');
+      }, (700 * (Math.exp(i * 0.14))) - 700);
+    });
+
+  }
 });

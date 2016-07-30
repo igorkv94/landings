@@ -11,16 +11,13 @@ var src = 'app';
 var dst = 'dist';
 
 gulp.task('styles', function() {
-    gulp.src(src+'/sass/**/*.sass')
+    gulp.src(src+'/sass/style.sass')
         .pipe(sass().on('error', sass.logError))
 		.pipe(autoprefixer({
             browsers: ['last 3 versions'],
             cascade: false
         }))
 		.pipe(cssmin())
-		.pipe(uncss({
-            html: [dst+'/index.html']
-        }))
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(dst+'/css/'));
 });
