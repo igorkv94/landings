@@ -83,12 +83,15 @@ figure
 // Tiger grid
 
 .tiger-pics
+  margin-bottom: 100px
+  
   figure
     margin-bottom: 20px
     position: relative
     opacity: 0
     transition: all 1s ease-in-out
     transform: translateX(20px)
+    overflow: hidden
     
     &.first-left-img
       transform: translateX(-100%)
@@ -100,6 +103,38 @@ figure
       opacity: 1
       transform: translateX(0px)
     
+    figcaption
+      position: absolute
+      top: 10px
+      left: -100%
+      background: black
+      color: white
+      padding: 2px 8px
+      font-size: 11px
+      transition: all 0.4s ease-in-out
+    
     img
+      display: block
+      transform: scale(1)
       border-radius: 40px
+      transition: all 0.4s ease-in-out
+      
+    &:hover
+      
+      figcaption
+        left: 0%
+      
+      img
+        border-radius: 0px
+      
+//Large window
+.large-window
+  height: 640px
+  background-image: url(/res/model.jpg)
+  background-position: top center
+  background-repeat: no-repeat
+  background-attachment: fixed
+  margin-top: 100px
+  border-radius: 20%
+    
       
