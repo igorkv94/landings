@@ -9,6 +9,12 @@ figure
   margin: auto
   
 .content
+  
+  position: relative
+  z-index: 2
+  background: white
+  margin-bottom: 400px
+  
   article
     padding: 100px 0
     max-width: 640px
@@ -36,6 +42,7 @@ figure
     position: top center
     attachment: fixed
   overflow: hidden
+  z-index: 3
 
 .logo
   height: 100px
@@ -93,12 +100,6 @@ figure
     transform: translateX(20px)
     overflow: hidden
     
-    &.first-left-img
-      transform: translateX(-100%)
-      
-    &.first-right-img
-      transform: translateX(100%)  
-    
     &.is-showing
       opacity: 1
       transform: translateX(0px)
@@ -136,5 +137,41 @@ figure
   background-attachment: fixed
   margin-top: 100px
   border-radius: 20%
+  margin-bottom: 100px
+  
+//posts
+
+.blog-posts
+  margin-top: 100px
+  
+  .post
+    border: 1px solid #e1e1e1
+    padding: 20px 20px 0
+    background: white
+    position: relative
+    
+  .post-1
+    transform: translate(100px, 20px)
+
+  .post-2
+    z-index: 2
+
+  .post-3
+    transform: translate(-100px, 20px)
+    
+//Footer
+footer
+  background: black
+  color: white
+  padding: 40px 0
+  position: fixed
+  bottom: 0
+  width: 100%
+
+  .footer-stuff
+    max-width: 640px
+    margin: 0 auto
+  a
+    color: white
     
       
