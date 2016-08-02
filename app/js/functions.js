@@ -16,7 +16,7 @@ $(window).scroll(function () {
   if (wScroll > $('.tiger-pics').offset().top - ($(window).height() / 1.2)) {
     $('.tiger-pics figure').each(function (i) {
       setTimeout(function () {
-        $('.tiger-pics figure').eq(i).addClass('is-showing');
+        $('.tiger-pics figure').eq(i).addClass('js-is-showing');
       }, (700 * (Math.exp(i * 0.14))) - 700);
     });
   }
@@ -30,4 +30,20 @@ $(window).scroll(function () {
       'transform': 'translate(' + Math.abs(offset) + 'px, ' + Math.abs(offset * 0.2) + 'px)'
     });
   }
+});
+$(document).ready(function () {
+  $("#owl").owlCarousel({
+    loop: true
+    , nav: true
+    , autoplay: true
+    , autoplayHoverPause: true
+    , navText: ['prev', 'next']
+    , items: 1
+    , dots: false
+  , });
+  $("#owl-demo").owlCarousel({
+    autoPlay: 3000, //Set AutoPlay to 3 seconds
+    items: 2
+    , dota: true
+  });
 });

@@ -17,6 +17,10 @@ gulp.task('styles', function() {
             browsers: ['last 3 versions'],
             cascade: false
         }))
+		/*.pipe(uncss({
+            html: [dst+'/index.html'],
+			ignore: [/js-/]
+        }))*/
 		.pipe(cssmin())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(dst+'/css/'));
@@ -24,9 +28,11 @@ gulp.task('styles', function() {
 
 gulp.task('styleCss', function() {
     gulp.src(src+'/css/**/*.css')
-		.pipe(uncss({
-            html: [dst+'/html/index.html']
-        }))
+		/*.pipe(uncss({
+            html: [dst+'/index.html']
+        }))*/
+		.pipe(cssmin())
+        .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(dst+'/css/'));
 });
 

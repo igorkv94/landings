@@ -7,10 +7,11 @@ html(lang="en")
     meta(name="author", content="")
     meta(name="viewport", content="width=device-width, initial-scale=1")
     link(rel="stylesheet", href="css/style.min.css")
+    link(rel="stylesheet", href="css/owl.carousel.min.css")
     link(rel="icon", type="image/png", href="images/favicon.png")
   
-  body      
-  
+  body   
+        
     header.header_parallax
       .eagle
       .deer
@@ -83,10 +84,40 @@ html(lang="en")
         
         .large-window 
         
-        p Tigers essentially live solitary lives, except during mating season and when females bear young. They are usually fiercely territorial and have and mark their large home ranges.
+        p Tigers essentially live solitary lives, except during mating season and when females bear young. They are usually fiercely territorial and have and mark their large home ranges.      
                 
         hr
         
+        h1 More pictures
+        
+        h2 Slider
+        
+        #owl
+          .item
+            img(src="/res/slides/1.jpg")
+          .item
+            img(src="/res/slides/2.jpg")
+          .item
+            img(src="/res/slides/3.jpg")
+          .item
+            img(src="/res/slides/4.jpg")
+            
+        h2.carous Carousel
+        
+        #owl-demo
+          .item
+            img(src="/res/slides/1.jpg")
+          .item
+            img(src="/res/slides/2.jpg")
+          .item
+            img(src="/res/slides/3.jpg")
+          .item
+            img(src="/res/slides/4.jpg")
+          .item
+            img(src="/res/slides/5.jpg")
+          .item
+            img(src="/res/slides/6.jpg")
+           
         .blog-posts.row
           
           .post.columns.four.post-1
@@ -106,6 +137,8 @@ html(lang="en")
             img(src="/res/posts/three.jpg")
             p Description
             p: a.button(href="") Read More
+            
+        hr        
       
     footer
       .row.footer-stuff
@@ -133,6 +166,7 @@ html(lang="en")
               input.u-full-width(type="email" placeholder="Your Email")
             .columns.four
               input.button-primary(type="submit")
-
-    script(src="js/jquery-2.1.3.min.js")
-    script(src="js/functions.js")
+     
+    script(src="js/jquery-2.1.3.min.js") 
+    script(src="js/owl.carousel.min-debug.js")
+    script(src="js/functions.js")    
