@@ -1,0 +1,208 @@
+body
+  font-family: "Open Sans", sans-serif
+  
+h1
+  color: #ccc
+  weight: 300
+  
+figure
+  margin: auto
+  
+.content
+  
+  position: relative
+  z-index: 2
+  background: white
+  margin-bottom: 300px
+  
+  article
+    padding: 100px 0
+    max-width: 640px
+    margin: 0 auto
+    text-align: center
+    
+  img
+    max-width: 100%
+    
+  p
+    text-align: justify
+    font-family: "Tahoma", sans-serif;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 600;
+    
+//Parallax
+
+.header_parallax
+  position: relative
+  height: 600px
+  background: 
+    image: url(../res/bg.jpg)
+    size: 100% 610px
+    position: top center
+    attachment: fixed
+  overflow: hidden
+  z-index: 3
+
+.logo
+  height: 100px
+  width: 100%
+  background-image: url(../res/logo.svg)
+  background-position: center
+  background-repeat: no-repeat
+  position: absolute
+  top: 50%
+  margin-top: -50px
+
+.deer
+  height: 113px
+  width: 100%
+  background-image:  url(../res/deer.png)
+  background-position: left
+  background-repeat: no-repeat
+  position: absolute
+  top: 70%
+  left: 16%
+  margin-top: -30px
+  
+.tiger
+  height: 194px
+  width: 100%
+  background-image:  url(../res/tiger.png)
+  background-position: right
+  background-repeat: no-repeat
+  position: absolute
+  top: 70%
+  margin-top: -50px
+
+  
+.eagle
+  width: 960px
+  height: 50px
+  background-image: url(../res/eagle.png)
+  background-repeat: no-repeat
+  background-position: top left
+  position: absolute
+  top: 10%
+  left: 50%
+  margin-left: -45%
+  
+// Tiger grid
+
+.tiger-pics
+  margin-bottom: 20px
+  
+  figure
+    margin-bottom: 20px
+    position: relative
+    opacity: 0
+    transition: all 1s ease-in-out
+    transform: translateX(20px)
+    overflow: hidden
+    
+    &.js-is-showing
+      opacity: 1
+      transform: translateX(0px)
+    
+    figcaption
+      position: absolute
+      top: 10px
+      left: -100%
+      background: black
+      color: white
+      padding: 2px 8px
+      font-size: 11px
+      transition: all 0.4s ease-in-out
+    
+    img
+      display: block
+      transform: scale(1)
+      border-radius: 40px
+      transition: all 0.4s ease-in-out
+      
+    &:hover
+      
+      figcaption
+        left: 0%
+      
+      img
+        border-radius: 0px
+        
+.population
+  list-style-type: none
+  text-align: left
+  margin-left: 15px
+      
+//Large window
+.large-window
+  height: 640px
+  background-image: url(../res/model.jpg)
+  background-position: top center
+  background-repeat: no-repeat
+  background-attachment: fixed
+  margin-top: 50px
+  border-radius: 20%
+  margin-bottom: 50px
+  
+//posts
+
+.blog-posts
+  margin-top: 100px
+  
+  .post
+    border: 1px solid #e1e1e1
+    padding: 20px 20px 0
+    background: white
+    position: relative
+    
+  p
+    text-align: center
+    
+  .post-1
+    transform: translate(100px, 20px)
+
+  .post-2
+    z-index: 2
+
+  .post-3
+    transform: translate(-100px, 20px)
+    
+//Footer
+footer
+  background: black
+  color: white
+  padding: 40px 0
+  position: fixed
+  bottom: 0 
+  width: 100%
+  
+  .articles
+    list-style-type: none
+    
+    li
+      padding-left: 20px
+      background: url(../res/icons/article.png) no-repeat 0 5px;
+    
+  .find_us
+    list-style-type: none
+    
+    li
+      padding-left: 20px;
+    
+    .twitter
+      background: url(../res/icons/twitter.png) no-repeat 0 5px;
+    .facebook
+      background: url(../res/icons/facebook.png) no-repeat 0 5px;
+    .instagram
+      background: url(../res/icons/instagram.png) no-repeat 0 5px;
+    .pinterest
+      background: url(../res/icons/pinterest.png) no-repeat 0 5px;
+
+  .footer-stuff
+    max-width: 640px
+    margin: 0 auto
+  a
+    color: white
+    
+.carous
+  margin-top: 50px;
