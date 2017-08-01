@@ -4,6 +4,7 @@ var autoprefixer = require('gulp-autoprefixer');
 var cssmin = require('gulp-cssmin');
 var rename = require('gulp-rename');
 var uncss = require('gulp-uncss');
+var clean = require('gulp-clean'); 
 var concat = require('gulp-concat');
 var connect = require('gulp-connect');
 var buffer = require('vinyl-buffer');
@@ -18,15 +19,22 @@ var critical = require('critical').stream;
 var src = 'app';
 var dst = 'dist';
 
+gulp.task('cleanCSS', function () {  
+  return gulp.src(dst+'/css', {read: false})
+    .pipe(clean());
+});
 
-gulp.task('init-styles', function() {
-    gulp.src(src+'/scss/bootstrap.scss')
+gulp.task('concat-styles',['cleanCSS'], function() {
+  return Promise.all([
+    new Promise(function(resolve, reject) {
+		gulp.src(src+'/scss/bootstrap.scss')
         .pipe(sass().on('error', sass.logError))
 		.pipe(uncss({
 		  html: [
 			'http://localhost:8888/'
 		  ],
-			timeout: 1000
+			timeout: 1000,
+			ignore: ['.in','.collapsing']
 		}))
 		.pipe(autoprefixer({
             browsers: ['last 3 versions'],
@@ -34,11 +42,11 @@ gulp.task('init-styles', function() {
         }))
 		.pipe(cssmin())
         .pipe(rename({suffix: '.min'}))
+        .on('error', reject)
         .pipe(gulp.dest(dst+'/css/'))
-});
-
-gulp.task('styles',['init-styles'], function() {
-    gulp.src(src+'/scss/main.scss')
+        .on('end', resolve);	    }),
+    new Promise(function(resolve, reject) {
+		gulp.src(src+'/scss/main.scss')
         .pipe(sass().on('error', sass.logError))
 		.pipe(autoprefixer({
             browsers: ['last 3 versions'],
@@ -46,14 +54,16 @@ gulp.task('styles',['init-styles'], function() {
         }))
 		.pipe(cssmin())
         .pipe(rename({suffix: '.min'}))
+        .on('error', reject)
         .pipe(gulp.dest(dst+'/css/'))
-});
-
-gulp.task('concat-styles',['styles'], function() {
-    gulp.src(dst+'/css/*.css')
+        .on('end', resolve);
+    })
+  ]).then(function () {
+		    gulp.src(dst+'/css/*.css')
         .pipe(concat('style.min.css'))
         .pipe(gulp.dest(dst+'/css/'))
 		.pipe(connect.reload());
+  });
 });
 
 
@@ -81,7 +91,13 @@ gulp.task('critical', function () {
 		.on('error', function(err) { gutil.log(gutil.colors.red(err.message)); });
 });
 
-gulp.task('images', function() {
+
+gulp.task('cleanIMG', function () {  
+  return gulp.src(dst+'/img', {read: false})
+    .pipe(clean());
+});
+
+gulp.task('images',['cleanIMG'], function() {
     gulp.src(src+'/img/**/*')
         .pipe(imagemin())
         .pipe(gulp.dest(dst+'/img/'))

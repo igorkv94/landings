@@ -244,7 +244,6 @@ $contorls-foreground: #fff;
             h4 {
               padding: 13px 0px 15px 13px;
               border-left: 4px solid #428bca;
-              font-weight: 900;
               transition: all 300ms ease-in-out;
             }
 
@@ -629,7 +628,7 @@ $contorls-foreground: #fff;
 
 //---------Parallax---------
 .parallax {
-  background: url("https://eu-lrh.com/wp-content/uploads/2014/12/Parallax-Background-Dark-11.jpg") no-repeat;
+  background: url("../img/parallax_bg.jpg") no-repeat;
   background-size: 100% 100%;
   background-position: center center;
   background-attachment: fixed;
