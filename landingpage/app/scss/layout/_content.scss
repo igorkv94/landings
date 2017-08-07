@@ -27,7 +27,7 @@ p {
     min-height: 1100px;
   }
   @media all and (max-width: $screen-phone) {
-    min-height: 1200px;
+    min-height: 1260px;
   }
   &__left {
     color: #ffffff;
@@ -114,7 +114,7 @@ p {
 	 min-height: 1120px;
   }
   @media all and (max-width: $screen-phone) {
-	 min-height: 1200px;
+	 min-height: 1300px;
   }
 
   .screen {
@@ -396,10 +396,11 @@ $contorls-foreground: #fff;
       margin-top: 60px;
       margin-bottom: 60px;
       &__button {
-        display: inline;
+        display: inline-block;
         font-weight: 900;
         font-size: 0.8em;
         margin-left: 10px;
+        margin-top: 10px;
         padding: 6px 12px;
         background: #428bca;
         color: #fff;

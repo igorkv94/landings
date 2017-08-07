@@ -54,8 +54,8 @@ $('.play').on('click', function () {
 });
 
 $('.speaker').click(function(e) {
-    $(this).toggleClass('mute');
-    if($('.speaker').hasClass('mute')){
+    $(this).toggleClass('speaker__mute');
+    if($('.speaker').hasClass('speaker__mute')){
         tv.mute();
     } else {
         tv.unMute();
